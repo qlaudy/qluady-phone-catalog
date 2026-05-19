@@ -70,6 +70,7 @@ export const HomePage = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const newModelsRef = useRef<HTMLDivElement>(null);
   const hotPricesRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef(null);
 
   const updateScrollButtons = (ref: React.RefObject<HTMLDivElement>) => {
     const slider = ref.current;
@@ -163,7 +164,7 @@ export const HomePage = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [activeSlide, slides.length]);
+  }, [slides.length]);
 
   return (
     <div className={styles.page}>

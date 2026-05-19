@@ -218,26 +218,13 @@
   }
 
   .item {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 120px 100px;
+    grid-template-columns: 1fr auto;
     align-items: center;
     gap: 24px;
   }
 
-  .itemTop {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    min-width: 0;
-  }
-
   .itemBottom {
-    display: contents;
-    word-break: break-word;
-  }
-
-  .price {
-    text-align: right;
+    gap: 24px;
   }
 }
 

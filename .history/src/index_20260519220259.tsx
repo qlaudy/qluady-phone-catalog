@@ -5,7 +5,7 @@ import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
-  <HashRouter>
+  <HashRouter basename="/qluady-phone-catalog">
     <FavoritesProvider>
       <CartProvider>
         <App />

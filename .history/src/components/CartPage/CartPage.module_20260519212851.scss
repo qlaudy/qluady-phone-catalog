@@ -228,12 +228,10 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    min-width: 0;
   }
 
   .itemBottom {
     display: contents;
-    word-break: break-word;
   }
 
   .price {

@@ -70,6 +70,7 @@ export const HomePage = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const newModelsRef = useRef<HTMLDivElement>(null);
   const hotPricesRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout>(null);
 
   const updateScrollButtons = (ref: React.RefObject<HTMLDivElement>) => {
     const slider = ref.current;
@@ -156,14 +157,16 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setActiveSlide(current =>
         current === slides.length - 1 ? 0 : current + 1,
       );
     }, 5000);
 
-    return () => clearInterval(interval);
-  }, [activeSlide, slides.length]);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [slides.length]);
 
   return (
     <div className={styles.page}>

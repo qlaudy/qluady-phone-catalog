@@ -163,7 +163,7 @@ export const HomePage = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [activeSlide, slides.length]);
+  }, [slides.length]);
 
   return (
     <div className={styles.page}>
